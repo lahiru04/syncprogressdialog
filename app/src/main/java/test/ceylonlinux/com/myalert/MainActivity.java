@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import library.ceylonlinux.com.syncprogressdialog.SyncProgDia;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +20,15 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                SyncProgDia syncProgDia = new SyncProgDia(MainActivity.this);
+                syncProgDia.setConfirmClickListener(new SyncProgDia.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SyncProgDia syncProgDia) {
+                        syncProgDia.dismissWithAnimation();
+                    }
+                });
+                syncProgDia.show();
 
             }
         });

@@ -23,15 +23,15 @@ public final class R {
         public static int fontStyle = 0x7f04007c;
         public static int fontVariationSettings = 0x7f04007d;
         public static int fontWeight = 0x7f04007e;
-        public static int keylines = 0x7f04008e;
-        public static int layout_anchor = 0x7f040091;
-        public static int layout_anchorGravity = 0x7f040092;
-        public static int layout_behavior = 0x7f040093;
-        public static int layout_dodgeInsetEdges = 0x7f040094;
-        public static int layout_insetEdge = 0x7f040095;
-        public static int layout_keyline = 0x7f040096;
-        public static int statusBarBackground = 0x7f0400d1;
-        public static int ttcIndex = 0x7f040104;
+        public static int keylines = 0x7f04008f;
+        public static int layout_anchor = 0x7f040092;
+        public static int layout_anchorGravity = 0x7f040093;
+        public static int layout_behavior = 0x7f040094;
+        public static int layout_dodgeInsetEdges = 0x7f040095;
+        public static int layout_insetEdge = 0x7f040096;
+        public static int layout_keyline = 0x7f040097;
+        public static int statusBarBackground = 0x7f0400d5;
+        public static int ttcIndex = 0x7f040109;
     }
     public static final class color {
         private color() {}
@@ -155,10 +155,10 @@ public final class R {
     public static final class styleable {
         private styleable() {}
 
-        public static int[] CoordinatorLayout = { 0x7f04008e, 0x7f0400d1 };
+        public static int[] CoordinatorLayout = { 0x7f04008f, 0x7f0400d5 };
         public static int CoordinatorLayout_keylines = 0;
         public static int CoordinatorLayout_statusBarBackground = 1;
-        public static int[] CoordinatorLayout_Layout = { 0x10100b3, 0x7f040091, 0x7f040092, 0x7f040093, 0x7f040094, 0x7f040095, 0x7f040096 };
+        public static int[] CoordinatorLayout_Layout = { 0x10100b3, 0x7f040092, 0x7f040093, 0x7f040094, 0x7f040095, 0x7f040096, 0x7f040097 };
         public static int CoordinatorLayout_Layout_android_layout_gravity = 0;
         public static int CoordinatorLayout_Layout_layout_anchor = 1;
         public static int CoordinatorLayout_Layout_layout_anchorGravity = 2;
@@ -173,7 +173,7 @@ public final class R {
         public static int FontFamily_fontProviderFetchTimeout = 3;
         public static int FontFamily_fontProviderPackage = 4;
         public static int FontFamily_fontProviderQuery = 5;
-        public static int[] FontFamilyFont = { 0x1010532, 0x101053f, 0x1010570, 0x1010533, 0x101056f, 0x7f040074, 0x7f04007c, 0x7f04007d, 0x7f04007e, 0x7f040104 };
+        public static int[] FontFamilyFont = { 0x1010532, 0x101053f, 0x1010570, 0x1010533, 0x101056f, 0x7f040074, 0x7f04007c, 0x7f04007d, 0x7f04007e, 0x7f040109 };
         public static int FontFamilyFont_android_font = 0;
         public static int FontFamilyFont_android_fontStyle = 1;
         public static int FontFamilyFont_android_fontVariationSettings = 2;
