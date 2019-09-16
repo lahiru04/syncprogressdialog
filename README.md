@@ -1,1 +1,1 @@
-# syncprogressdialog
+# Sync Progress Dialog
