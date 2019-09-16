@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "test.ceylonlinux.com.myalert"
+        minSdkVersion 16
+        targetSdkVersion 28
+        multiDexEnabled true
+
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    repositories {
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+
+        google()
+        jcenter()
+
+
+
+    }
+
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0-alpha1'
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha04'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha5'
+    implementation project(":syncprogressdialog")
+
+//    implementation 'com.github.lahiru04:sweetalert:1.0.1'
+
+
+}
