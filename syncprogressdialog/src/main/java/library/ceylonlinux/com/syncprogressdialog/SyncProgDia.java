@@ -4,14 +4,16 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.Transformation;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
-import androidx.annotation.NonNull;
+
 
 public class SyncProgDia extends Dialog implements View.OnClickListener {
     private Button mConfirmButton;
@@ -21,13 +23,16 @@ public class SyncProgDia extends Dialog implements View.OnClickListener {
     private Animation mOverlayOutAnim;
     private View mDialogView;
     private boolean mCloseFromCancel;
+    private LinearLayout mbarContainer;
+    private Context context;
 
     public static interface OnSweetClickListener {
         public void onClick(SyncProgDia syncProgDia);
     }
 
-    public SyncProgDia(@NonNull Context context) {
+    public SyncProgDia(Context context) {
         super(context, R.style.alert_dialog);
+        this.context = context;
         mOverlayOutAnim = new Animation() {
             @Override
             protected void applyTransformation(float interpolatedTime, Transformation t) {
@@ -37,6 +42,8 @@ public class SyncProgDia extends Dialog implements View.OnClickListener {
             }
         };
         mOverlayOutAnim.setDuration(120);
+
+
     }
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +54,7 @@ public class SyncProgDia extends Dialog implements View.OnClickListener {
         mDialogView = getWindow().getDecorView().findViewById(android.R.id.content);
         mModalInAnim = (AnimationSet) OptAnimationLoader.loadAnimation(getContext(), R.anim.modal_in);
         mModalOutAnim = (AnimationSet) OptAnimationLoader.loadAnimation(getContext(), R.anim.modal_out);
+        mbarContainer = (LinearLayout) findViewById(R.id.bar_container);
 
         mModalOutAnim.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -81,10 +89,6 @@ public class SyncProgDia extends Dialog implements View.OnClickListener {
     }
 
 
-
-
-
-
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.confirm_button) {
@@ -109,6 +113,14 @@ public class SyncProgDia extends Dialog implements View.OnClickListener {
 
     public SyncProgDia setConfirmClickListener(OnSweetClickListener listener) {
         mConfirmClickListener = listener;
+        return this;
+    }
+
+
+    public SyncProgDia addProgressRow() {
+        LayoutInflater vi = (LayoutInflater) context.getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View v = vi.inflate(R.layout.progress_row, null);
+        mbarContainer.addView(v);
         return this;
     }
 }
